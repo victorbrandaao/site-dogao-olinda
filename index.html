@@ -215,11 +215,11 @@
             var numberOfPeople = document.getElementById('numberOfPeople').value;
             var individualCommand = document.getElementById('individualCommand').value;
             var contactPhone = document.getElementById('contactPhone').value;
-            var whatsappNumber = '81981494880'; // Substitua com o número que receberá as mensagens.
+            var whatsappNumber = '81991776341'; // Substitua com o número que receberá as mensagens.
 
             // Substitua espaços por %20 e quebras de linha por %0A
             var message = `Olá, gostaria de reservar uma mesa para ${numberOfPeople} pessoas. Comanda individual: ${individualCommand}. Meu telefone para contato é: ${contactPhone}.`;
-            var whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            var whatsappUrl = `https://wa.me/5581991776341?text=${encodeURIComponent(message)}`;
 
             // Abre a URL em uma nova janela/aba. O usuário deverá confirmar o envio da mensagem no WhatsApp.
             window.open(whatsappUrl, '_blank');
