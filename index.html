@@ -172,21 +172,19 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="heading">Reserva de <span>Mesas</span></h1>
-                    <p class="text-description">Faça sua reserva online. Preencha as informações e confirmaremos sua
-                        reserva via WhatsApp.</p>
-
+                    <p class="text-description">Faça sua reserva online. Preencha as informações e confirmaremos sua reserva via WhatsApp.</p>
+    
                     <form id="reservationForm">
                         <div class="form-group">
                             <label for="fullName">Nome Completo:</label>
                             <input type="text" class="form-control" id="fullName" name="fullName" required>
                         </div>
-
+    
                         <div class="form-group">
                             <label for="numberOfPeople">Quantidade de Pessoas:</label>
-                            <input type="number" class="form-control" id="numberOfPeople" name="numberOfPeople" min="1"
-                                required>
+                            <input type="number" class="form-control" id="numberOfPeople" name="numberOfPeople" min="1" required>
                         </div>
-
+    
                         <div class="form-group">
                             <label for="individualCommand">Comanda Individual:</label>
                             <select class="form-control" id="individualCommand" name="individualCommand">
@@ -194,33 +192,31 @@
                                 <option value="Não" selected>Não</option>
                             </select>
                         </div>
-
+    
                         <div class="form-group">
                             <label for="contactPhone">Telefone para Contato:</label>
-                            <input type="tel" class="form-control" id="contactPhone" name="contactPhone"
-                                pattern="[0-9]{11}" placeholder="Somente números" required>
+                            <input type="tel" class="form-control" id="contactPhone" name="contactPhone" pattern="[0-9]{11}" placeholder="Somente números" required>
                         </div>
-
-                        <button type="button" class="btn btn-default" onclick="sendWhatsAppMessage()">Reservar
-                            Mesa</button>
+    
+                        <button type="button" class="btn btn-default" onclick="sendWhatsAppMessage()">Reservar Mesa</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
-
+    
     <script type="text/javascript">
         function sendWhatsAppMessage() {
+            var fullName = document.getElementById('fullName').value;
             var numberOfPeople = document.getElementById('numberOfPeople').value;
             var individualCommand = document.getElementById('individualCommand').value;
             var contactPhone = document.getElementById('contactPhone').value;
             var whatsappNumber = '81991776341'; // Substitua com o número que receberá as mensagens.
-
+    
             // Substitua espaços por %20 e quebras de linha por %0A
-            var message = `Olá, gostaria de reservar uma mesa para ${numberOfPeople} pessoas. Comanda individual: ${individualCommand}. Meu telefone para contato é: ${contactPhone}.`;
+            var message = `Olá, meu nome é ${fullName} e gostaria de reservar uma mesa para ${numberOfPeople} pessoas. Comanda individual: ${individualCommand}. Meu telefone para contato é: ${contactPhone}.`;
             var whatsappUrl = `https://wa.me/5581991776341?text=${encodeURIComponent(message)}`;
-
+    
             // Abre a URL em uma nova janela/aba. O usuário deverá confirmar o envio da mensagem no WhatsApp.
             window.open(whatsappUrl, '_blank');
         }
